@@ -16,12 +16,12 @@ Organization-wide profile and development guidelines for the
 | Commit messages and history | [docs/commits.md](docs/commits.md) |
 | Pull requests, review and merging | [docs/pull-requests.md](docs/pull-requests.md) |
 | AI-assisted code | [docs/ai-assisted-code.md](docs/ai-assisted-code.md) |
-| Files migration work must not touch (stop list) | [docs/protected-files.md](docs/protected-files.md) |
+| Stop list: files other work must not touch | [docs/protected-files.md](docs/protected-files.md) |
 | CI and pyrlyn/infra reusable workflows | [docs/ci-and-infra.md](docs/ci-and-infra.md) |
 | Releases, version bumps, Homebrew tap | [docs/releases.md](docs/releases.md) |
 | Fuzz testing | [docs/testing-fuzz.md](docs/testing-fuzz.md) |
 | CLI output: colors, emoji, machine output | [docs/cli-ux.md](docs/cli-ux.md) |
-| Man pages and shell completions | [docs/cli-completions-and-man.md](docs/cli-completions-and-man.md) |
+| Man pages and completions | [docs/cli-completions-and-man.md](docs/cli-completions-and-man.md) |
 | Install, update and uninstall behavior | [docs/installers.md](docs/installers.md) |
 | Localization | [docs/i18n.md](docs/i18n.md) |
 | Language of repository content | [docs/languages.md](docs/languages.md) |
