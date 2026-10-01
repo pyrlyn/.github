@@ -1,17 +1,19 @@
 # pyrlyn
 
-Developer tools, mostly in Rust:
+pyrlyn — инструменты для разработчиков на Rust: установка CLI-программ из релизов GitHub,
+локальный запуск языковых моделей и утилиты для AI-агентов, которые пишут код.
 
-- [rtok](https://github.com/pyrlyn/rtok) - token-reduction CLI for AI coding agents: hooks, MCP
-  server and API proxy with pluggable methods
-- [ketch](https://github.com/pyrlyn/ketch) - single-binary package manager for command-line
-  tools and apps, installed straight from GitHub releases
-- [cox](https://github.com/pyrlyn/cox) - modular terminal coding agent with a safe, event-driven
-  core
-- [runa](https://github.com/pyrlyn/runa) - local-first AI runner: fit checker, llama.cpp engine,
-  OpenAI-compatible server
+## Продукты
 
-Shared CI lives in [pyrlyn/infra](https://github.com/pyrlyn/infra), Homebrew formulae and casks
-in [pyrlyn/homebrew-tap](https://github.com/pyrlyn/homebrew-tap).
-
-Contributing: see the [development guidelines](https://github.com/pyrlyn/.github#guidelines).
+- [ketch](https://github.com/pyrlyn/ketch) — пакетный менеджер в одном бинарнике: ставит
+  CLI-инструменты и приложения прямо из релизов GitHub на macOS, Linux и Windows, без формул и
+  тапов. Сверяет опубликованную контрольную сумму, хранит версии и чисто удаляет установленное.
+- [rtok](https://github.com/pyrlyn/rtok) — CLI, который сокращает контекст AI-агентов для
+  программирования: хуки Claude Code, MCP-сервер и API-прокси в одном бинарнике. Каждое
+  сокращение измеряется, а сокращённые данные можно получить обратно по id.
+- [runa](https://github.com/pyrlyn/runa) — local-first AI-раннер: до скачивания проверяет,
+  потянет ли машина GGUF-модель, запускает её локально через llama.cpp или обращается к OpenAI и
+  Anthropic. Умеет поднимать OpenAI-совместимый HTTP-сервер.
+- [cox](https://github.com/pyrlyn/cox) — модульный агент для программирования в терминале с
+  безопасным событийным ядром: интерактивный TUI, headless-режим, интеграция с редакторами через
+  ACP и MCP. Проект в активной разработке.
