@@ -25,11 +25,17 @@
 
 ## Merging
 
-- Squash merge only.
+- Squash merge, with one exception: a release pull request that only bumps the version (the
+  release-plz PR, or bump.yml's `release/bump-vX.Y.Z` PR) is merged by rebase, so its one
+  version commit lands on `main` unchanged: `gh pr merge --rebase --match-head-commit <head>`
+  (bump.yml merges its own PR this way). Never squash it.
+- A repository that releases this way allows rebase merging (`allow_rebase_merge`), and the
+  `pull_request` rule of its ruleset lists `rebase` in `allowed_merge_methods`
+  ([pyrlyn/infra `bump.yml`](https://github.com/pyrlyn/infra/blob/main/docs/reusable-workflows.md)).
 - CI must be green on the head commit. The only exception is a failure already known and
   already fixed on `main` (say which one, with a link, in the PR).
-- Merge with `gh pr merge --squash --match-head-commit <sha>`, so nothing pushed after the last
-  check is merged unseen.
+- Merge any other PR with `gh pr merge --squash --match-head-commit <sha>`, so nothing pushed
+  after the last check is merged unseen.
 - Never `--auto` and never `--admin`: no merge that bypasses the checks or a review.
 - No direct pushes to `main`.
 - No force-push to a shared branch without the owner's confirmation.
