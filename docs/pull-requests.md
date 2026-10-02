@@ -36,6 +36,9 @@
 
 ## Branches and worktrees
 
-- Do not delete a branch, local or remote, unless explicitly asked to.
+- Delete your branch after its work reaches `main` (merged pull request): `git branch -d`
+  locally plus `git push origin --delete` for the remote, then `git fetch --prune`. Never
+  delete or merge a branch you do not own, a branch with someone else's open pull request, or
+  a branch checked out in another worktree.
 - Work in a separate git worktree per task and lock it (`git worktree lock --reason ...`) so
   another person or agent does not remove it while it is in use.
