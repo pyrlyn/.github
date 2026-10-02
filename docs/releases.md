@@ -61,7 +61,7 @@ major. Below 1.0, release-plz by default sends `feat:` to the patch; ketch overr
 Formulae and casks live in [pyrlyn/homebrew-tap](https://github.com/pyrlyn/homebrew-tap). A
 release is complete only when the tap points at it:
 
-- ketch and cox regenerate their cask (`Casks/<name>.rb`: version and both macOS checksums)
+- ketch and cox regenerate their cask (`Casks/<name>.rb`: version and the macOS arm64 checksum)
   after the Release is published, check it with `brew style`, smoke-test it, and push it to the
   tap. This needs a `HOMEBREW_TAP_TOKEN` that can push to pyrlyn/homebrew-tap; without it the
   job fails instead of silently leaving the tap behind. Repair a failed tap update without a

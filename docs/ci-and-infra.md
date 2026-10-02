@@ -13,7 +13,8 @@ Reusable workflows (`on: workflow_call`, under `.github/workflows/`):
 - `ci.yml` - single, config-driven entrypoint (`.github/infra.yml` in the caller): Rust CI,
   scans, SonarCloud, lint and repository-specific jobs behind a `gate`.
 - `pipeline.yml` - `ci-rust.yml` + CodeQL + Semgrep + Snyk in parallel behind a `gate`.
-- `ci-rust.yml` - fmt, clippy, check, tests on a shared five-target matrix, optional MSRV.
+- `ci-rust.yml` - fmt, clippy, check, tests on a shared four-target matrix, optional MSRV.
+  macOS is arm64 (Apple Silicon, `aarch64-apple-darwin`) only; Intel Macs are unsupported.
 - `ci-dotnet.yml`, `changes.yml` - .NET tests and changed-file classification by ecosystem.
 - `lint.yml` - actionlint (+ shellcheck) on the caller's workflows.
 - `codeql.yml`, `semgrep.yml`, `snyk.yml`, `sonarcloud.yml` - scans.
