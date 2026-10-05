@@ -69,4 +69,5 @@ release is complete only when the tap points at it:
   `gh workflow run release.yml -f force=true` (cox).
 - rtok's dist build attaches `rtok.rb` to the Release but does not push to the tap. The tap's
   own `sync-rtok.yml` downloads it and opens a pull request there; merging it publishes.
-- runa's dist config names `listepo/homebrew-runa` and keeps the Homebrew publish job off.
+- runa's dist config names the shared `pyrlyn/homebrew-tap` and keeps the Homebrew publish job
+  off until runa's formula is wired into that tap.
