@@ -10,7 +10,7 @@ needed change to the owner instead.
   ignores.
 - `.github/workflows/dependabot.yml`, the Dependabot auto-merge caller - owned by the
   maintainers: it decides which Dependabot PRs merge unattended (patch updates after green CI).
-  rtok, ketch and cox each keep a local copy today; pyrlyn/infra's `dependabot-automerge.yml`
+  rtok, ketch and cox each keep a local copy today; pyrlyn/ci's `dependabot-automerge.yml`
   is the shared version. Moving a repository to it is also the owner's change.
 
 Rules:

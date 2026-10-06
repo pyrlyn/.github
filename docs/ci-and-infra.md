@@ -1,12 +1,12 @@
-# CI and pyrlyn/infra
+# CI and pyrlyn/ci
 
-Shared CI lives in [pyrlyn/infra](https://github.com/pyrlyn/infra). Its
-[README](https://github.com/pyrlyn/infra#readme) and
-[docs/reusable-workflows.md](https://github.com/pyrlyn/infra/blob/main/docs/reusable-workflows.md)
+Shared CI lives in [pyrlyn/ci](https://github.com/pyrlyn/ci). Its
+[README](https://github.com/pyrlyn/ci#readme) and
+[docs/reusable-workflows.md](https://github.com/pyrlyn/ci/blob/main/docs/reusable-workflows.md)
 are the reference for inputs, secrets and permissions; this page is the standard a repository
 follows when it moves its CI there.
 
-## What lives in pyrlyn/infra
+## What lives in pyrlyn/ci
 
 Reusable workflows (`on: workflow_call`, under `.github/workflows/`):
 
@@ -51,7 +51,7 @@ action or reusable workflow not pinned to a full commit SHA), `lint.yml`, and `s
 Reference reusable workflows and actions by full commit SHA, with a comment naming the ref:
 
 ```yaml
-uses: pyrlyn/infra/.github/workflows/ci.yml@<40-char sha> # main 2026-09-27
+uses: pyrlyn/ci/.github/workflows/ci.yml@<40-char sha> # main 2026-09-27
 ```
 
 Dependabot (`package-ecosystem: github-actions`) moves SHA pins of reusable workflows like
@@ -67,7 +67,7 @@ concurrency:
   cancel-in-progress: true # CI, lint, scans
 ```
 
-- CI, lint and scan workflows cancel older runs (`cancel-in-progress: true`). pyrlyn/infra's
+- CI, lint and scan workflows cancel older runs (`cancel-in-progress: true`). pyrlyn/ci's
   own `action-pins.yml`, `lint.yml` and `self-test.yml` use exactly the block above.
 - Callers whose `main` runs feed `revert-on-failure` keep every push's run on `main` and
   cancel only on pull requests, so the revert hits the push that failed. infra documents this

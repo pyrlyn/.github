@@ -17,7 +17,7 @@ Organization-wide profile and development guidelines for the
 | Pull requests, review and merging | [docs/pull-requests.md](docs/pull-requests.md) |
 | AI-assisted code | [docs/ai-assisted-code.md](docs/ai-assisted-code.md) |
 | Stop list: files other work must not touch | [docs/protected-files.md](docs/protected-files.md) |
-| CI and pyrlyn/infra reusable workflows | [docs/ci-and-infra.md](docs/ci-and-infra.md) |
+| CI and pyrlyn/ci reusable workflows | [docs/ci-and-infra.md](docs/ci-and-infra.md) |
 | Releases, version bumps, Homebrew tap | [docs/releases.md](docs/releases.md) |
 | Fuzz testing | [docs/testing-fuzz.md](docs/testing-fuzz.md) |
 | CLI output: colors, emoji, machine output | [docs/cli-ux.md](docs/cli-ux.md) |

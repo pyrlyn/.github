@@ -5,7 +5,7 @@
 - Push the branch to the pyrlyn repository itself (`pyrlyn/<repo>`), not to a fork, so CI runs
   with the repository's settings and secrets.
 - One pull request per repository per change. A change that touches several repositories (for
-  example repinning pyrlyn/infra) is one PR in each, each complete on its own.
+  example repinning pyrlyn/ci) is one PR in each, each complete on its own.
 - Prefer small, focused PRs; split unrelated changes.
 - Title in Conventional Commits form ([commits](commits.md)); it becomes the squash commit on
   `main`.
@@ -13,7 +13,7 @@
 - A PR that fixes a known breakage says so and links the PR or run that broke it.
 - If code in the PR was written with AI assistance, see [AI-assisted code](ai-assisted-code.md).
 - English, lines of at most 100 characters, no `Co-Authored-By` in commits.
-- Open as a draft while work is in progress: pyrlyn/infra's `pipeline.yml` skips every job,
+- Open as a draft while work is in progress: pyrlyn/ci's `pipeline.yml` skips every job,
   including the gate, on draft PRs.
 
 ## Review
@@ -31,7 +31,7 @@
   (bump.yml merges its own PR this way). Never squash it.
 - A repository that releases this way allows rebase merging (`allow_rebase_merge`), and the
   `pull_request` rule of its ruleset lists `rebase` in `allowed_merge_methods`
-  ([pyrlyn/infra `bump.yml`](https://github.com/pyrlyn/infra/blob/main/docs/reusable-workflows.md)).
+  ([pyrlyn/ci `bump.yml`](https://github.com/pyrlyn/ci/blob/main/docs/reusable-workflows.md)).
 - CI must be green on the head commit. The only exception is a failure already known and
   already fixed on `main` (say which one, with a link, in the PR).
 - Merge any other PR with `gh pr merge --squash --match-head-commit <sha>`, so nothing pushed
