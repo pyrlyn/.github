@@ -28,7 +28,7 @@ crates.io: `release-plz.toml` sets `publish = false`.
 3. The merge runs the verify command on the merge commit, then dispatches the release workflow
    with `tag=v<version>`.
 
-rtok and cox call pyrlyn/infra's `release-plz.yml`; ketch still has a local copy. It needs
+rtok and cox call pyrlyn/ci's `release-plz.yml`; ketch still has a local copy. It needs
 `RELEASE_PLZ_TOKEN` (organization secret, fine-grained PAT with contents and pull requests
 write): a release PR opened with `GITHUB_TOKEN` would run no CI.
 
