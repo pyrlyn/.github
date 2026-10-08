@@ -1,0 +1,5 @@
+- T1. Point all shared-CI references at pyrlyn/ci
+- T2. Fix stale workflow facts in the release/CI docs
+- T3. Correct the README's "nothing is applied yet" claim
+- T4. Small doc fixes batch
+- T5. State the secrets tradeoff of org-repo branches
