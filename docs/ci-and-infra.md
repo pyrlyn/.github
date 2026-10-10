@@ -21,7 +21,6 @@ Reusable workflows (`on: workflow_call`, under `.github/workflows/`):
 - `release-plz.yml` - release PR; on its merge, verify and dispatch the release workflow.
 - `release.yml` - manual release for repositories not built with cargo-dist.
 - `bump.yml` - verify, then run the repository's release script (bump + dispatch).
-- `pages.yml` - build a static site and deploy it to GitHub Pages.
 - `sync-docs.yml` - publish `docs/` to pyrlyn/landing.
 - `dependabot-automerge.yml` - merge allowed Dependabot updates after green CI.
 - `revert-on-failure.yml` - revert a failed push to the default branch.
