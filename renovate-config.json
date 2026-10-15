@@ -1,0 +1,16 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "pyrlyn shared Renovate preset (hosted Mend Renovate app)",
+  "enabledManagers": ["cargo", "github-actions", "npm", "mise"],
+  "timezone": "Europe/Kiev",
+  "schedule": ["before 6am on monday"],
+  "prConcurrentLimit": 3,
+  "prHourlyLimit": 0,
+  "automerge": false,
+  "platformAutomerge": false,
+  "labels": ["dependencies"],
+  "semanticCommits": "enabled",
+  "semanticCommitType": "chore",
+  "minimumReleaseAge": "7 days",
+  "ignorePaths": ["**/node_modules/**", "**/tests/fixtures/**", "**/__fixtures__/**"]
+}
