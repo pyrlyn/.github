@@ -36,7 +36,10 @@
   already fixed on `main` (say which one, with a link, in the PR).
 - Merge any other PR with `gh pr merge --squash --match-head-commit <sha>`, so nothing pushed
   after the last check is merged unseen.
-- Never `--auto` and never `--admin`: no merge that bypasses the checks or a review.
+- Auto-merge is allowed: `gh pr merge --auto --squash --delete-branch --match-head-commit <sha>`.
+  It merges only after the required checks pass; the repository must have `allow_auto_merge`
+  enabled.
+- Never `--admin`: no merge that bypasses the checks or a review.
 - No direct pushes to `main`.
 - No force-push to a shared branch without the owner's confirmation.
 
