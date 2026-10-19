@@ -34,10 +34,10 @@ write): a release PR opened with `GITHUB_TOKEN` would run no CI.
 
 ## Bump workflow
 
-`Bump and release` (`bump.yml`, `workflow_dispatch`) is the one-click alternative in rtok and
-ketch; runa has the equivalent `release-manual.yml`. It takes a `level` input (`patch`,
+`Bump and release` (`bump.yml`, `workflow_dispatch`) is the one-click alternative in rtok,
+ketch, cox and runa; each calls pyrlyn/ci's `bump.yml`. It takes a `level` input (`patch`,
 `minor`, `major`, default `patch`) and runs the repository's release script
-(`tools/release.sh` in rtok, `scripts/release.sh` in ketch and runa):
+(`tools/release.sh` in rtok, `scripts/release.sh` in ketch, cox and runa):
 
 - The version in `Cargo.toml` is released as it stands if it has no tag yet. It is raised by
   `level` only when that version is already tagged.
