@@ -8,9 +8,11 @@ follows when it moves its CI there.
 
 ## What lives in pyrlyn/ci
 
-Reusable workflows (`on: workflow_call`, under `.github/workflows/`):
+The main reusable workflows (`on: workflow_call`, under `.github/workflows/`; the
+[pyrlyn/ci README](https://github.com/pyrlyn/ci#readme) lists all of them):
 
-- `ci.yml` - single, config-driven entrypoint (`.github/infra.yml` in the caller): Rust CI,
+- `ci.yml` - single, config-driven entrypoint (`.github/infra.yml` in the caller; the file keeps
+  the pre-rename name and has nothing to do with the pyrlyn/infra server repository): Rust CI,
   scans, SonarCloud, lint and repository-specific jobs behind a `gate`.
 - `pipeline.yml` - `ci-rust.yml` + CodeQL + Semgrep + Snyk in parallel behind a `gate`.
 - `ci-rust.yml` - fmt, clippy, check, tests on a shared four-target matrix, optional MSRV.
@@ -25,24 +27,26 @@ Reusable workflows (`on: workflow_call`, under `.github/workflows/`):
 - `dependabot-automerge.yml` - merge allowed Dependabot updates after green CI.
 - `revert-on-failure.yml` - revert a failed push to the default branch.
 
-Composite actions (`.github/actions/`): `gate`, `cancel-run`, `changes`, `config`,
-`macos-sign`, `revert-on-failure`.
+Composite actions (`.github/actions/`) include `gate`, `cancel-run`, `changes`, `config`,
+`macos-sign`, `revert-on-failure`, `setup-rust`, `setup-xcode`, `notify-release-failure` and
+`warnings-to-issues`; see
+[`.github/actions/`](https://github.com/pyrlyn/ci/tree/main/.github/actions) for the rest.
 
-infra's own triggered workflows check infra itself: `action-pins.yml` (fails on any external
+pyrlyn/ci's own triggered workflows check pyrlyn/ci itself: `action-pins.yml` (fails on any external
 action or reusable workflow not pinned to a full commit SHA), `lint.yml`, and `self-test.yml`
 (runs the reusable workflows against a fixture crate before any caller pins a change).
 
 ## What stays in each repository
 
 - Thin caller workflows: triggers, `concurrency`, job `permissions`, explicit `secrets:` and a
-  `uses:` of the infra workflow. No build logic in the caller.
+  `uses:` of the pyrlyn/ci workflow. No build logic in the caller.
 - `.github/infra.yml` for `ci.yml` settings, where the repository uses it.
 - `.github/dependabot.yml` (GitHub reads it only from the repository itself).
 - Repository-specific jobs, e.g. rtok's webui/wasm and plugin-version checks.
-- cargo-dist's generated `release.yml` and `build-setup.yml` in repositories built with dist
-  (rtok, ketch, runa, cox): dist regenerates `release.yml` and fails `dist plan` on a
-  hand-edited copy.
-- Release glue that dist calls, e.g. ketch's `tap.yml` and `verify.yml`.
+- cargo-dist's generated `release.yml` in repositories built with dist (rtok, ketch, runa):
+  dist regenerates it and fails `dist plan` on a hand-edited copy. cox's `release.yml` is
+  hand-written ([releases](releases.md)).
+- Release glue that dist calls, e.g. ketch's `tap.yml`.
 - The files on the [stop list](protected-files.md), which migration work does not touch.
 
 ## Pinning
@@ -69,7 +73,7 @@ concurrency:
 - CI, lint and scan workflows cancel older runs (`cancel-in-progress: true`). pyrlyn/ci's
   own `action-pins.yml`, `lint.yml` and `self-test.yml` use exactly the block above.
 - Callers whose `main` runs feed `revert-on-failure` keep every push's run on `main` and
-  cancel only on pull requests, so the revert hits the push that failed. infra documents this
+  cancel only on pull requests, so the revert hits the push that failed. pyrlyn/ci documents this
   variant and the consumers' `pipeline.yml` callers use it:
 
   ```yaml
@@ -99,5 +103,5 @@ concurrency:
 ## Permissions
 
 Workflows start from `permissions: contents: read` at the top. Each calling job grants what
-the called workflow needs (see infra's table), including `actions: write` for `cancel-run`:
+the called workflow needs (see pyrlyn/ci's table), including `actions: write` for `cancel-run`:
 GitHub refuses to start a nested job that asks for more than its caller grants.
