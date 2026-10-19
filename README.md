@@ -32,7 +32,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the short version.
 
 GitHub applies some files in this repository as defaults to every repository of the
 organization that lacks its own copy (issue and PR templates, `workflow-templates/`, and other
-community health files). None are added yet, so no repository changes behavior because of this
-repository. Add them in a separate, reviewed pull request.
+community health files). Today that is only `CONTRIBUTING.md`, plus `profile/README.md` on the
+organization page; there are no templates, `SECURITY.md` or workflow templates yet. Add them in a
+separate, reviewed pull request.
 
 `dependabot.yml` is never read from here: GitHub reads it only from each repository itself.

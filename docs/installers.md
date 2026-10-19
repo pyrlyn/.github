@@ -7,11 +7,11 @@ installs for the user.
 ## Install
 
 - Not installed: install it.
-- Already installed: ask "update?".
+- Already installed and a newer version exists: ask "update?".
   - Yes: run the update below.
   - No: exit without changes.
-  - No newer version available: print that the program is already installed and cannot be
-    installed again, and exit without changes.
+- Already installed and no newer version exists: print that the program is already installed
+  and cannot be installed again, and exit without changes.
 
 ## Update
 
