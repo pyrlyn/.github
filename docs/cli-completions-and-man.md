@@ -23,6 +23,6 @@ subcommands.
 
 Generate man pages and completions from the CLI definition, so they cannot drift from the
 parser. With clap, use [`clap_mangen`](https://crates.io/crates/clap_mangen) for roff and
-[`clap_complete`](https://crates.io/crates/clap_complete) for completions (rtok's
-`rtok man` and `rtok completions`). Hand-write only what no generator covers, such as the
+[`clap_complete`](https://crates.io/crates/clap_complete) for completions (the token CLI's
+`the token CLI man` and `the token CLI completions`). Hand-write only what no generator covers, such as the
 `doskey` macros, and test that every command appears in each output.

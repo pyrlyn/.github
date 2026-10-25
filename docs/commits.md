@@ -16,7 +16,7 @@ repository already uses them (`feat:`, `fix:`, `docs:`, `ci:`, `chore:`, `refact
   bump ([releases](releases.md)), so pick it for what the change does to users, not for how
   large it is.
 
-Some repositories enforce this locally (for example ketch's `commitlint.config.mjs`).
+Some repositories enforce this locally (for example the package manager's `commitlint.config.mjs`).
 
 ## History
 

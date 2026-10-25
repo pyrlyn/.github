@@ -17,12 +17,12 @@ here (still true on 2026-10-19).
 
 ### T2. Fix stale workflow facts in the release/CI docs
 
-`docs/ci-and-infra.md:42-44` lists cox among dist-generated repos (it has a hand-written `release.yml`, no `build-setup.yml`); `docs/releases.md:39` names runa's nonexistent `release-manual.yml` (it has `bump.yml`); `releases.md:37` omits cox's `bump.yml`; `ci-and-infra.md:45` names ketch's nonexistent `verify.yml`; `releases.md:72` says runa's dist tap is `listepo/homebrew-runa` (404) when `dist-workspace.toml` says `pyrlyn/homebrew-tap`; `releases.md:70-71` describes the tap's `sync-rtok.yml` which no longer exists. Done means: every statement about a repo's workflows matches that repo's actual `.github/workflows/`.
+`docs/ci-and-infra.md:42-44` lists the coding agent among dist-generated repos (it has a hand-written `release.yml`, no `build-setup.yml`); `docs/releases.md:39` names runa's nonexistent `release-manual.yml` (it has `bump.yml`); `releases.md:37` omits the coding agent's `bump.yml`; `ci-and-infra.md:45` names the package manager's nonexistent `verify.yml`; `releases.md:72` says runa's dist tap is `listepo/homebrew-runa` (404) when `dist-workspace.toml` says `pyrlyn/homebrew-tap`; `releases.md:70-71` describes the tap's `sync-rtok.yml` which no longer exists. Done means: every statement about a repo's workflows matches that repo's actual `.github/workflows/`.
 
-Audit 2026-10-19: the `ci-and-infra.md` dist list, ketch `verify.yml` and runa `release-manual.yml`
+Audit 2026-10-19: the `ci-and-infra.md` dist list, the package manager `verify.yml` and runa `release-manual.yml`
 are fixed. Still stale: no repository calls pyrlyn/ci's `release-plz.yml` any more (all four use
 `bump.yml`), so `releases.md:10-14,21-33` and `pull-requests.md:28-31` describe a flow nobody
-runs, and cox has no `release-plz.toml` although `releases.md:5-6` implies every repo has one;
+runs, and the coding agent has no `release-plz.toml` although `releases.md:5-6` implies every repo has one;
 `releases.md:70-71` names the tap's `sync-rtok.yml`, but pyrlyn/homebrew-tap has no workflows.
 Severity: low.
 
@@ -36,7 +36,7 @@ Three passes over `main` at 07913ea: (1) module walk, (2) trust boundaries (what
 applies to other repos: community-health defaults and the Renovate preset), (3) docs against the
 live repositories. Fixed in the audit PR (branch `fix/dotgithub-audit-2026-10-19`), docs only:
 the "infra" name for pyrlyn/ci and its action list (closes T1), dist and release-workflow facts
-(part of T2), cox#71, the installer prompt nesting, and the README community-health claim (closes
+(part of T2), the coding agent#71, the installer prompt nesting, and the README community-health claim (closes
 T3 and T4; the profile is English now).
 
 ### T7. Settle the pyrlyn/ci pinning rule

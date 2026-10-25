@@ -1,7 +1,7 @@
 # pyrlyn/.github
 
 Organization-wide profile and development guidelines for the
-[pyrlyn](https://github.com/pyrlyn) repositories (rtok, ketch, cox, runa, infra and the rest).
+[pyrlyn](https://github.com/pyrlyn) repositories (the token CLI, the package manager, the coding agent, runa, infra and the rest).
 
 - [`profile/README.md`](profile/README.md) is the public organization profile shown on
   <https://github.com/pyrlyn>.
