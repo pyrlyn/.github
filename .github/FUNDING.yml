@@ -1,0 +1,14 @@
+# Funding links shown in the "Sponsor" button of every repository
+# that has no FUNDING.yml of its own. Docs:
+# https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository
+github: [listepo]
+# Placeholders: uncomment after the account is created on that platform.
+# open_collective: pyrlyn
+# polar: listepo
+# thanks_dev: u/gh/listepo
+# liberapay: listepo
+# ko_fi: listepo
+# buy_me_a_coffee: listepo
+# patreon: listepo
+# issuehunt: listepo
+# tidelift: npm/<package-name>   # only once a package is published and lifted
