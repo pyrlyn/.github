@@ -42,11 +42,11 @@ action or reusable workflow not pinned to a full commit SHA), `lint.yml`, and `s
   `uses:` of the pyrlyn/ci workflow. No build logic in the caller.
 - `.github/infra.yml` for `ci.yml` settings, where the repository uses it.
 - `.github/dependabot.yml` (GitHub reads it only from the repository itself).
-- Repository-specific jobs, e.g. rtok's webui/wasm and plugin-version checks.
-- cargo-dist's generated `release.yml` in repositories built with dist (rtok, ketch, runa):
-  dist regenerates it and fails `dist plan` on a hand-edited copy. cox's `release.yml` is
+- Repository-specific jobs, e.g. The token CLI's webui/wasm and plugin-version checks.
+- cargo-dist's generated `release.yml` in repositories built with dist (the token CLI, the package manager, runa):
+  dist regenerates it and fails `dist plan` on a hand-edited copy. The coding agent's `release.yml` is
   hand-written ([releases](releases.md)).
-- Release glue that dist calls, e.g. ketch's `tap.yml`.
+- Release glue that dist calls, e.g. The package manager's `tap.yml`.
 - The files on the [stop list](protected-files.md), which migration work does not touch.
 
 ## Pinning

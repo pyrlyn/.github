@@ -22,4 +22,4 @@ The 2026-10-19 audit rewrote `README.md` to say that `CONTRIBUTING.md` and the p
 
 `docs/i18n.md:8-9` still says pyrlyn/cox#71 is open (it merged); `docs/ci-and-infra.md:28-29` lists 6 composite actions where `pyrlyn/ci` has 9 (notify-release-failure, setup-xcode, warnings-to-issues missing); `docs/installers.md:11-14` has the "No newer version available" bullet as a sibling of the Yes/No answers instead of under the Update path; `docs/languages.md` demands English-only while `profile/README.md` is Russian with no carved-out exception. Done means: all four fixed (translate the profile or add the exception).
 
-The 2026-10-19 audit fixed the cox#71 status, the composite-action list (now with a link to the full set) and the installer prompt nesting. `profile/README.md` is already English.
+The 2026-10-19 audit fixed the coding agent#71 status, the composite-action list (now with a link to the full set) and the installer prompt nesting. `profile/README.md` is already English.
