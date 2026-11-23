@@ -1,6 +1,6 @@
 # pyrlyn
 
-pyrlyn builds Rust tools for developers: installing CLI programs from GitHub releases, running
+pyrlyn builds command-line tools for developers: installing CLI programs from GitHub releases, running
 language models locally, and utilities for AI coding agents.
 
 ## Products
