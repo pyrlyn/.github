@@ -1,8 +1,8 @@
 # Funding links shown in the "Sponsor" button of every repository
 # that has no FUNDING.yml of its own. Docs:
 # https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository
-github: [listepo]
 # Placeholders: uncomment after the account is created on that platform.
+# github: [listepo]   # once listepo has a GitHub Sponsors profile (none yet)
 # open_collective: pyrlyn
 # polar: listepo
 # thanks_dev: u/gh/listepo
