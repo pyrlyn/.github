@@ -32,8 +32,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the short version.
 
 GitHub applies some files in this repository as defaults to every repository of the
 organization that lacks its own copy (issue and PR templates, `workflow-templates/`, and other
-community health files). Today that is only `CONTRIBUTING.md`, plus `profile/README.md` on the
-organization page; there are no templates, `SECURITY.md` or workflow templates yet. Add them in a
-separate, reviewed pull request.
+community health files). Today that is `CONTRIBUTING.md` and `.github/FUNDING.yml`, plus
+`profile/README.md` on the organization page; there are no templates, `SECURITY.md` or workflow
+templates yet. Add them in a separate, reviewed pull request.
+
+`.coderabbit.yaml` here is a synced copy of the central CodeRabbit config, which CodeRabbit reads
+from `pyrlyn/coderabbit` for every repository without its own file.
 
 `dependabot.yml` is never read from here: GitHub reads it only from each repository itself.

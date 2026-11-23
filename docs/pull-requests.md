@@ -18,8 +18,9 @@
 
 ## Review
 
-- CodeRabbit runs on demand only: the repositories set `reviews.auto_review.enabled: false` in
-  `.coderabbit.yaml`. Ask for a review with a `@coderabbitai review` comment when you want one.
+- CodeRabbit runs on demand only: the central config in `pyrlyn/coderabbit`, or a repository's own
+  `.coderabbit.yaml` where it has one, sets `reviews.auto_review.enabled: false`. Ask for a review
+  with a `@coderabbitai review` comment when you want one.
 - Dependabot PRs and changes to the [stop list](protected-files.md) are handled separately and
   are never merged without review.
 
